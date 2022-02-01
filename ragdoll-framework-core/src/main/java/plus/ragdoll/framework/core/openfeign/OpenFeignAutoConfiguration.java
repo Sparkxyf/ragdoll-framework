@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @author : spark
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(prefix = "plus.ragdoll.openfeign.config", value = "enable", matchIfMissing = false)
+@ConditionalOnProperty(prefix = "plus.ragdoll.openfeign.config", value = "enable")
 public class OpenFeignAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean

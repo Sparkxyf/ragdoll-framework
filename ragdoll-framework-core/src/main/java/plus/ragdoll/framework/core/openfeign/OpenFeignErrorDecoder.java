@@ -1,7 +1,6 @@
 package plus.ragdoll.framework.core.openfeign;
 
 import cn.hutool.core.lang.TypeReference;
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import feign.Response;
 import feign.Util;
@@ -16,14 +15,15 @@ import java.nio.charset.StandardCharsets;
  * @author : spark
  */
 @Slf4j
-public class OpenFeignErrorDecoder implements ErrorDecoder  {
+public class OpenFeignErrorDecoder implements ErrorDecoder {
     @Override
     public Exception decode(String methodKey, Response response) {
         try {
             if (response.body() != null) {
                 String body = Util.toString(response.body().asReader(StandardCharsets.UTF_8));
                 log.debug("openfeign error response: {}", body);
-                ApiResponse<Void> apiResponse = JSONUtil.toBean(body, new TypeReference<ApiResponse<Void>>() {},true);
+                ApiResponse<Void> apiResponse = JSONUtil.toBean(body, new TypeReference<ApiResponse<Void>>() {
+                }, true);
                 return new ParamErrorException(apiResponse.getMsg());
             } else {
                 return new RuntimeException("No response body from openfeign api provider");
