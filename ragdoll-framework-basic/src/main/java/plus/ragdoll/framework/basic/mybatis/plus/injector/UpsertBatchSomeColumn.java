@@ -26,13 +26,39 @@ import java.util.stream.Collectors;
  * @author : spark
  * @date : 2021-07-18 18:53
  */
-@NoArgsConstructor
-@AllArgsConstructor
 @SuppressWarnings("serial")
 @Slf4j
 public class UpsertBatchSomeColumn extends AbstractMethod {
 
     private static final String UPDATE_DUPLICATE_KEY = " ON DUPLICATE KEY UPDATE ";
+
+
+    /**
+     * 默认方法名
+     */
+    public UpsertBatchSomeColumn() {
+        super("upsertBatchSomeColumn");
+    }
+
+    /**
+     * 默认方法名
+     *
+     * @param predicate 字段筛选条件
+     */
+    public UpsertBatchSomeColumn(Predicate<TableFieldInfo> predicate) {
+        super("upsertBatchSomeColumn");
+        this.predicate = predicate;
+    }
+
+    /**
+     * @param name      方法名
+     * @param predicate 字段筛选条件
+     * @since 3.5.0
+     */
+    public UpsertBatchSomeColumn(String name, Predicate<TableFieldInfo> predicate) {
+        super(name);
+        this.predicate = predicate;
+    }
     /**
      * 字段筛选条件
      */
@@ -79,12 +105,6 @@ public class UpsertBatchSomeColumn extends AbstractMethod {
         sql = sql.replace("</script>",updateScript);
         SqlSource sqlSource = languageDriver.createSqlSource(configuration, sql, modelClass);
         return this.addInsertMappedStatement(mapperClass, modelClass, getMethod(sqlMethod), sqlSource, keyGenerator, keyProperty, keyColumn);
-    }
-
-    @Override
-    public String getMethod(SqlMethod sqlMethod) {
-        // 自定义 mapper 方法名
-        return "upsertBatchSomeColumn";
     }
 }
 

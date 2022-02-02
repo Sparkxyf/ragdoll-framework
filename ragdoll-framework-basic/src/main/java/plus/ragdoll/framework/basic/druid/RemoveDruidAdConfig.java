@@ -1,6 +1,5 @@
 package plus.ragdoll.framework.basic.druid;
 
-
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties;
 import com.alibaba.druid.util.Utils;
@@ -20,7 +19,7 @@ import java.io.IOException;
  * @author : spark
  * @date : 2020-10-04 00:15
  */
-
+@SuppressWarnings("unchecked")
 @Configuration
 @ConditionalOnWebApplication
 @AutoConfigureAfter(DruidDataSourceAutoConfigure.class)

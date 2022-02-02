@@ -5,18 +5,14 @@
 
     <parent>
         <groupId>plus.ragdoll</groupId>
-        <artifactId>ragdoll-framework-bom</artifactId>
+        <artifactId>ragdoll-framework</artifactId>
         <version>1.0.0</version>
-        <relativePath/>
     </parent>
     <artifactId>ragdoll-framework-core</artifactId>
     <version>1.0.0</version>
     <name>ragdoll-framework-core</name>
     <description>ragdoll-framework-core</description>
 
-    <properties>
-
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

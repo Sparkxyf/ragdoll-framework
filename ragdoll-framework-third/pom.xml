@@ -4,9 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>plus.ragdoll</groupId>
-        <artifactId>ragdoll-framework-bom</artifactId>
+        <artifactId>ragdoll-framework</artifactId>
         <version>1.0.0</version>
-        <relativePath/>
     </parent>
     <artifactId>ragdoll-framework-third</artifactId>
     <version>1.0.0</version>
