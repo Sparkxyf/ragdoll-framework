@@ -12,9 +12,6 @@
     <name>ragdoll-framework-third</name>
     <description>ragdoll-framework-third</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
