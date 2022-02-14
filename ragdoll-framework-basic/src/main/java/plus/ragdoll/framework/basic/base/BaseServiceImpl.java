@@ -11,7 +11,7 @@ import java.util.List;
  * @author : spark
  * @date : 2021-07-18 16:14
  */
-public class BaseServiceImpl<M extends MyBaseMapper<T>, T> extends ServiceImpl<M, T> implements BaseService<T> {
+public class BaseServiceImpl<M extends BasicMapper<T>, T> extends ServiceImpl<M, T> implements BaseService<T> {
 
     @Autowired(required = false)
     private M myBaseMapper;

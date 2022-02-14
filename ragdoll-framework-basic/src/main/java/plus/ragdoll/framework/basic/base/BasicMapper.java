@@ -12,7 +12,7 @@ import java.util.List;
  * @author : spark
  * @date : 2021-07-18 10:19
  */
-public interface MyBaseMapper<T> extends BaseMapper<T> {
+public interface BasicMapper<T> extends BaseMapper<T> {
     /**
      * 插入多条记录
      *

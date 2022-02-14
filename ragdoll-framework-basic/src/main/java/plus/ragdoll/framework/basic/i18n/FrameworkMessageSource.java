@@ -8,12 +8,12 @@ import org.springframework.web.servlet.support.RequestContextUtils;
  * @author spark
  */
 public class FrameworkMessageSource extends ResourceBundleMessageSource {
-    public FrameworkMessageSource() {
-        setBasename("i18n/messages");
-        setDefaultEncoding("UTF-8");
-    }
-
-    public static MessageSourceAccessor getAccessor() {
-        return new MessageSourceAccessor(new FrameworkMessageSource());
-    }
+//    public FrameworkMessageSource() {
+//        setBasename("i18n/messages");
+//        setDefaultEncoding("UTF-8");
+//    }
+//
+//    public static MessageSourceAccessor getAccessor() {
+//        return new MessageSourceAccessor(new FrameworkMessageSource());
+//    }
 }

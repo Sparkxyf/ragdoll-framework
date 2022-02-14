@@ -5,16 +5,19 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.support.MessageSourceAccessor;
 import plus.ragdoll.framework.basic.i18n.FrameworkMessageSource;
+import plus.ragdoll.framework.basic.i18n.MessageUtils;
 
 @Slf4j
 @SpringBootTest
 class RagdollFrameworkBasicApplicationTests {
 
-    protected MessageSourceAccessor messages = FrameworkMessageSource.getAccessor();
+//    protected MessageSourceAccessor messages = FrameworkMessageSource.getAccessor();
 
     @Test
     void contextLoads() {
-        String msg = messages.getMessage("NOT_FOUND");
+//        String msg = messages.getMessage("NOT_FOUND");
+        String msg = MessageUtils.get("NOT_FOUND");
+
         log.debug(msg);
     }
 
